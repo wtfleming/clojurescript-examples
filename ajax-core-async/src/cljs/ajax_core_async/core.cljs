@@ -1,6 +1,7 @@
 (ns ajax-core-async.core
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [goog.events :as events]
+            [goog.events.EventType :as EventType]
             [goog.dom :as dom]
             [cljs.core.async :refer [<! put! chan]])
   (:import goog.History
@@ -54,7 +55,7 @@
 (defn main []
   (set-html! (dom/getElement "app") home-html)
 
-  (let [clicks (listen (dom/getElement "searchbutton") (.-CLICK events/EventType))]
+  (let [clicks (listen (dom/getElement "searchbutton") EventType/CLICK)]
     (handle-search-button-click clicks)))
 
 
