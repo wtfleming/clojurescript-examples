@@ -1,6 +1,6 @@
-# om-undo
+# om-todo-list-undo-html5-storage
 
-Example of buildin an undo feature with om.
+Example of buildin an undo feature with om and persisting state with HTML5 storage.
 
 ```
 lein cljsbuild auto
