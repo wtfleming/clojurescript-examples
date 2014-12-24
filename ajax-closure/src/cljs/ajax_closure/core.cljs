@@ -1,5 +1,6 @@
 (ns ajax-closure.core
   (:require [goog.events :as events]
+            [goog.events.EventType :as EventType]
             [goog.dom :as dom])
   (:import goog.Uri
            goog.net.Jsonp))
@@ -40,7 +41,7 @@
 
 (defn main []
   (set-html! (dom/getElement "app") home-html)
-  (events/listen (dom/getElement "searchbutton") (.-CLICK events/EventType) on-search-btn-click))
+  (events/listen (dom/getElement "searchbutton") EventType/CLICK on-search-btn-click))
 
 (main)
 
