@@ -1,9 +1,11 @@
 (ns secretary-example.core
   (:require-macros [secretary.core :refer [defroute]])
   (:require [goog.events :as events]
+            [goog.History.EventType :as HistoryEventType]
             [goog.dom :as dom]
             [secretary.core :as secretary])
   (:import goog.History))
+
 
 (def app (dom/getElement "app"))
 
@@ -27,7 +29,7 @@
 
   ;; Configure history
   (let [history (History.)]
-    (events/listen history "navigate"
+    (events/listen history HistoryEventType/NAVIGATE
                    (fn [event]
                      (secretary/dispatch! (.-token event))))
     (.setEnabled history true)))
