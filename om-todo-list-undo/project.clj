@@ -6,8 +6,8 @@
                  [compojure "1.3.1"]
                  [ring/ring-defaults "0.1.2"]
                  [sablono "0.2.22"]
-                 [om "0.8.0-beta5"]
-                 [org.clojure/clojurescript "0.0-2505"]]
+                 [org.om/om "0.8.0"]
+                 [org.clojure/clojurescript "0.0-2511"]]
   :ring {:handler om-todo-list-undo.core.handler/app}
   :profiles
   {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
