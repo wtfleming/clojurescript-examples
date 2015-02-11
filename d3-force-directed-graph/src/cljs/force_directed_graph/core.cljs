@@ -1,4 +1,5 @@
-(ns hello-world.core)
+(ns force-directed-graph.core
+  (:require cljsjs.d3))
 
 (defn- build-force-layout [width height]
   (.. js/d3

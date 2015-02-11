@@ -1,4 +1,4 @@
-(ns hello-world.core.handler
+(ns force-directed-graph.core.handler
   (:require [compojure.core :refer :all]
             [compojure.route :as route]
             [compojure.response :refer [render]]
