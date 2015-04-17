@@ -49,8 +49,7 @@
     (let [ch (chan (dropping-buffer 5))
           _ (onto-chan ch (range 0 10))
           msg (<! (async/into [] ch))]
-      (set-inner-html! "example-two-output" msg)
-      (close! ch))))
+      (set-inner-html! "example-two-output" msg))))
 
 (defn handle-example-three-button-click
   "Write to and read from to a channel with a sliding buffer."
@@ -59,8 +58,7 @@
     (let [ch (chan (sliding-buffer 5))
           _ (onto-chan ch (range 0 10))
           msg (<! (async/into [] ch))]
-      (set-inner-html! "example-three-output" msg)
-      (close! ch))))
+      (set-inner-html! "example-three-output" msg))))
 
 (defn set-click-handler
   "Helper function to setting click event handlers."
