@@ -49,7 +49,7 @@
     (let [ch (chan (dropping-buffer 5))
           _ (onto-chan ch (range 0 10))
           msg (<! (async/into [] ch))]
-      (set! (.-innerHTML (dom/getElement "example-two-output")) msg)
+      (set-inner-html! "example-two-output" msg)
       (close! ch))))
 
 (defn handle-example-three-button-click
@@ -59,7 +59,7 @@
     (let [ch (chan (sliding-buffer 5))
           _ (onto-chan ch (range 0 10))
           msg (<! (async/into [] ch))]
-      (set! (.-innerHTML (dom/getElement "example-three-output")) msg)
+      (set-inner-html! "example-three-output" msg)
       (close! ch))))
 
 (defn set-click-handler
